@@ -8,6 +8,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        background-color: var(--color-grey-light-2);
+        flex: 0 0 100%;
+    }
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -96,11 +101,20 @@
     // &__user-name {
     // }
 }
+
 .side-nav {
     list-style: none;
     font-size: 1.4rem;
     margin-top: 3.5rem;
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin-top: 0;
+    }
+
     &__item {
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+        }
         position: relative;
         &:not(:last-child) {
             margin-bottom: 0.5rem;
@@ -139,9 +153,18 @@
         text-transform: uppercase;
         padding: 1.5rem 3rem;
         display: flex;
+
         align-items: center;
         position: relative;
         z-index: 10;
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: center;
+            padding: 2rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+            padding: 1.5rem;
+        }
     }
 
     &__icon {
@@ -149,13 +172,23 @@
         width: 1.75rem;
         height: 1.75rem;
         fill: currentColor;
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
     }
 }
+
 .legal {
     font: size 1.2rem;
     margin-bottom: 1rem;
     color: var(--color-grey-light-4);
     text-align: center;
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 .gallery {
@@ -165,6 +198,7 @@
         display: block;
     }
 }
+
 .overview {
     display: flex;
     align-items: center;
@@ -175,6 +209,10 @@
         font-weight: 300;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.6rem;
+            padding: 1rem 2rem;
+        }
     }
     &__stars {
         display: flex;
@@ -199,6 +237,10 @@
         color: #fff;
         margin-left: 3rem;
         padding: 0 2.3rem;
+        @media only screen and (max-width: $bp-small) {
+            padding: 0 1.3rem;
+            margin-left: 2rem;
+        }
         align-self: stretch;
         display: flex;
         flex-direction: column;
@@ -207,6 +249,9 @@
     }
     &__rating-average {
         font-size: 2.25rem;
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.5rem;
+        }
         font-weight: 300;
         margin-bottom: -3px;
     }
@@ -215,6 +260,7 @@
         text-transform: uppercase;
     }
 }
+
 .btn-inline {
     border: none;
     color: var(--color-primary);
@@ -240,6 +286,7 @@
         animation: pulsate 1s infinite;
     }
 }
+
 @keyframes pulsate {
     0% {
         transform: scale(1);
@@ -254,9 +301,11 @@
         box-shadow: none;
     }
 }
+
 .paragraph:not(:last-of-type) {
     margin-bottom: 2rem;
 }
+
 .list {
     margin: 3rem 0;
     padding: 3rem 0;
@@ -286,6 +335,7 @@
         mask-size: cover;
     }
 }
+
 .recommend {
     font-size: 1.3rem;
     color: var(--color-grey-dark-3);
@@ -296,6 +346,7 @@
         margin-right: auto;
     }
     &__friends {
+        display: flex;
     }
 
     &__photo {
@@ -306,20 +357,24 @@
         border: 3px solid #fff;
     }
     &__photo:not(:last-child) {
-        margin-right: -1.5rem;
+        margin-right: -2rem;
     }
 }
+
 .user-reviews {
     display: flex;
     flex-direction: column;
 }
+
 .review {
     position: relative;
     overflow: hidden;
-    margin-bottom: 3rem;
     box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
     background-color: #fff;
     margin-bottom: 4rem;
+    @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 3rem;
+    }
     &__text {
         margin: 2rem 2rem;
         font-size: 1.5rem;
@@ -371,19 +426,36 @@
         font-family: sans-serif;
     }
 }
+
 .cta {
     // display: flex;
     // flex-direction: column;
     padding: 3.5rem 0;
     text-align: center;
     background-color: #fff;
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem 0;
+        margin: 1 3rem;
+        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    }
+    @media only screen and (max-width: $bp-small) {
+        font-size: 1.5rem;
+        margin: 1rem 3rem;
+    }
     &__book_now {
         text-transform: uppercase;
         font-size: 2rem;
         font-weight: 300;
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.5rem;
+        }
     }
 }
+
 .btn {
+    @media only screen and (max-width: $bp-small) {
+        font-size: 1.3rem;
+    }
     background-image: var(--unhover-image);
     margin-top: 2rem;
     border: none;

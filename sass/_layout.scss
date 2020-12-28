@@ -4,11 +4,20 @@
     background-color: var(--color-grey-light-2);
     box-shadow: var(--shadow-dark);
     min-height: 50rem;
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
 }
+
 .content {
     display: flex;
-    // height: 100%;
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
 }
+
 .header {
     height: 7rem;
     background-color: white;
@@ -17,7 +26,13 @@
     justify-content: space-between;
     align-items: center;
     font-size: 1.4rem;
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap;
+        height: 11rem;
+        align-content: space-around;
+    }
 }
+
 .sidebar {
     background-color: var(--color-grey-dark-1);
     flex: 0 0 18%;
@@ -25,24 +40,44 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
 .hotel-view {
     flex: 1;
 }
+
 .detail {
     display: flex;
     padding: 4.5rem;
     font-size: 1.6rem;
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
 }
+
 .description {
     background-color: #fff;
     flex: 0 0 60%;
     box-shadow: var(--shadow-light);
     padding: 3rem;
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
     font-size: 1.4rem;
     margin-right: 4.5rem;
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0.5rem;
+    }
 }
+
 .user-reviews {
     flex: 1;
     flex-direction: column;
     align-items: center;
+    @media only screen and (max-width: $bp-small) {
+        margin-top: 2rem;
+    }
 }
